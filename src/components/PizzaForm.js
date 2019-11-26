@@ -1,22 +1,34 @@
 import React from "react"
 
-const PizzaForm = () => {
+//   state= {
+//     id,
+//     topping, 
+//     size,
+//     vegetarian 
+//   }
+
+//   onChange = (event) => {
+//   setState({
+//     [event.target.name]:event.target.value
+//   })
+// }
+
+const PizzaForm = (props) => {
   return(
       <div className="form-row">
         <div className="col-5">
             <input type="text" className="form-control" placeholder="Pizza Topping" value={
-                //Pizza Topping Should Go Here
                 null
-              }/>
+              } onChange={props.onChange}/>
         </div>
         <div className="col">
-          <select value={null} className="form-control">
+          <select value={null} className="form-control" onChange={props.onChange}>
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
             <option value="Large">Large</option>
           </select>
         </div>
-        <div className="col">
+        <div className="col" onChange={this.onChange}>
           <div className="form-check">
             <input className="form-check-input" type="radio" value="Vegetarian" checked={null}/>
             <label className="form-check-label">
